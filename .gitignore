@@ -1,0 +1,90 @@
+## Build results
+bin/
+obj/
+out/
+[Aa]rtifacts/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vs/
+
+## Rider-specific
+.idea/
+*.sln.iml
+
+## ASP.NET Core secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/secrets.json
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+*.lock.json
+
+## Visual Studio Code
+.vscode/
+*.code-workspace
+
+## Logs
+*.log
+logs/
+
+## NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+*.nuspec
+
+## Transient files
+*.tmp
+*.temp
+
+## Publish artifacts
+publish/
+*.publishsettings
+
+## Backup & temporary files
+*.bak
+*.old
+*.orig
+*.tmp
+*~$
+
+## WPF specific (if using generated resources)
+*.g.*
+*.i.*
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# DotCover
+*.dotCover
+
+# Local Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# IIS / Kestrel / ASP.NET Core
+.env
+.env.*
+*.db
+*.pid
