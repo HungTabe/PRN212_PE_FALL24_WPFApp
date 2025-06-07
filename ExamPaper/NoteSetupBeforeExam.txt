@@ -1,0 +1,58 @@
+NOTE
+
+1) Ở NHÀ CHUẨN BỊ TRƯỚC CONECTION STRING CÓ SERVER UID PWD ĐỂ
+LÚC THI TRIỂN KHAI NHANH
+
+{
+  "ConnectionStrings": {
+    "DefaultConnectionStringDB": "Server=DESKTOP-OLU548T;Database=Fall24PerfumeStoreDB;uid=sa;pwd=saadmin;TrustServerCertificate=True;",
+  }
+}
+
+Setup Properti của Appsettings.json
+Set property "Copy to output Directory" of appsettings.json file 
+to "Copy if newer"
+
+// DONE APPSETTINGS.JSON
+
+// SETUP PACKAGE - At package tại DALayer
+4 CSDL
+dotnet add package Microsoft.EntityFrameworkCore --version 8.0.7
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.7
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.7
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.7
+2 JSON
+dotnet add package Microsoft.Extensions.Configuration --version 8.0.0
+dotnet add package Microsoft.Extensions.Configuration.Json --version 8.0.0
+
+Then build to confirm package
+
+// SETUP DO MAKE MODELS FOR DB FIRST
+1) - Install dotnet-ef for CLI
+dotnet tool install --global dotnet-ef 
+
+2) - Use Entity Framework Core to generate Object Model from DB
+dotnet ef dbcontext scaffold "Server=DESKTOP-OLU548T;Database=PerfumeStoreDB;uid=sa;pwd=saadmin;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities --context-dir ".\"
+
+3) - Config DbContext not hard code connection string 
+   Setup GetConnectionString func
+   and OnConfiguring
+
+private string GetConnectionString()
+ {
+IConfiguration config = new ConfigurationBuilder()
+ 	.SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json",true,true)
+            .Build();
+var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
+
+return strConn;
+}
+
+
+CHECK BIN ĐỂ ĐẢM BẢO ĐỦ FILE
+
+	
+
+
+
