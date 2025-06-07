@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PerfumeManagement_QE123456")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44ae9971aafebf1c32951e831bb7a4af9369dcf1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6737b8a8bd089af75aed77edea8864157af78058")]
 [assembly: System.Reflection.AssemblyProductAttribute("PerfumeManagement_QE123456")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PerfumeManagement_QE123456")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

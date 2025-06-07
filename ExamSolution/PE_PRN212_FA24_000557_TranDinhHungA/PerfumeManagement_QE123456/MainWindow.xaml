@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PerfumeManagement_QE123456"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="Fall 2024 - Main PE Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13" Background="#FFDDE769" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Width="600" Height="200" Margin="100,42,100,242"/>
+
+    </Grid>
 </Window>
