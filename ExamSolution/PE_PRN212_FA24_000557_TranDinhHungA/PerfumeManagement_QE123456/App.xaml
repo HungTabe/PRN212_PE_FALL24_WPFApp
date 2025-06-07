@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:PerfumeManagement_QE123456"
              StartupUri="LoginWindow.xaml">
     <Application.Resources>
-         
+        <!--Login Label Style-->
+        <Style x:Key="LoginLabelStyle" TargetType="Label" >
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="#FF3324A8" />
+        </Style>
+
+        <!--Login Textbox Style-->
+        <Style x:Key="LoginTextboxStyle" TargetType="TextBox" >
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="Background" Value="#FFF3CFCF" />
+        </Style>
+
     </Application.Resources>
 </Application>
