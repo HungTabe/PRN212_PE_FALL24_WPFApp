@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {}
+    "net8.0-windows7.0": {
+      "PerfumeManagement.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "PerfumeManagement.DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PerfumeManagement.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PerfumeManagement.BLL.dll": {}
+        }
+      },
+      "PerfumeManagement.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PerfumeManagement.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PerfumeManagement.DAL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PerfumeManagement.BLL/1.0.0": {
+      "type": "project",
+      "path": "../PerfumeManagement.BLL/PerfumeManagement.BLL.csproj",
+      "msbuildProject": "../PerfumeManagement.BLL/PerfumeManagement.BLL.csproj"
+    },
+    "PerfumeManagement.DAL/1.0.0": {
+      "type": "project",
+      "path": "../PerfumeManagement.DAL/PerfumeManagement.DAL.csproj",
+      "msbuildProject": "../PerfumeManagement.DAL/PerfumeManagement.DAL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": []
+    "net8.0-windows7.0": [
+      "PerfumeManagement.BLL >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\trand\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\2025YEAR\\ToolForDev\\Folk\\RepoStorage\\PRN212_Repo\\PRN212_WPFApp1_FALL24\\ExamSolution\\PE_PRN212_FA24_000557_TranDinhHungA\\PerfumeManagement.BLL\\PerfumeManagement.BLL.csproj": {
+              "projectPath": "D:\\2025YEAR\\ToolForDev\\Folk\\RepoStorage\\PRN212_Repo\\PRN212_WPFApp1_FALL24\\ExamSolution\\PE_PRN212_FA24_000557_TranDinhHungA\\PerfumeManagement.BLL\\PerfumeManagement.BLL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
