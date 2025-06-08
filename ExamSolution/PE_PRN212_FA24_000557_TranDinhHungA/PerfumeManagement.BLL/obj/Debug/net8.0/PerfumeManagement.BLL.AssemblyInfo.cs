@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PerfumeManagement.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3094b63649917727fe462cb06507eec748fe7e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efe1122663ddf17873c789580c45a43939eda4b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("PerfumeManagement.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PerfumeManagement.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
