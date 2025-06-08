@@ -59,7 +59,7 @@ namespace PerfumeManagement_QE123456 {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/PerfumeManagement_QE123456;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PerfumeManagement_QE123456;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

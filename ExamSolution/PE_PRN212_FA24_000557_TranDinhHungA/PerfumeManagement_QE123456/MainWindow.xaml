@@ -7,7 +7,22 @@
         mc:Ignorable="d"
         Title="Fall 2024 - Main PE Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13" Background="#FFDDE769" WindowStartupLocation="CenterScreen" >
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Width="600" Height="200" Margin="100,42,100,242"/>
+        <DataGrid HorizontalAlignment="Left" Width="600" Height="300" Margin="10,104,0,0"
+                  VerticalAlignment="Top" AutoGenerateColumns="False">
+            <!--AutoGenerateColumns="False" for 9+-->
+            <!--Config Columns + Open Tag Parent-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="40" Binding="{Binding PerfumeId}"/>
+                <DataGridTextColumn Header="Name" Width="60" Binding="{Binding PerfumeName}"/>
+                <DataGridTextColumn Header="Ingredient" Width="120" Binding="{Binding Ingredients}"/>
+                <DataGridTextColumn Header="Release Date" Width="90" Binding="{Binding ReleaseDate }"/>
+                <DataGridTextColumn Header="Concentration" Width="120" Binding="{Binding Concentration}"/>
+                <DataGridTextColumn Header="Longevity " Width="80" Binding="{Binding Longevity}"/>
+                <DataGridTextColumn Header="Quantity " Width="80" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Price" Width="80" Binding="{Binding Price }"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

@@ -1,8 +1,18 @@
 NOTE
+0) DỰNG DB
+- DỰNG KIẾN TRÚC 3 LAYERS
+  GUI LAYER - WPF
+  BLL LAYER - CLASS LIB
+  DAL LAYER - CLASS LIB
+
+- REFERERENCE CÁC LAYER
+  GUI - BLL - DAL
+
+- CHỈNH PROPERTY CHO PROJECT REF - COPY TO LOCAL
 
 1) Ở NHÀ CHUẨN BỊ TRƯỚC CONECTION STRING CÓ SERVER UID PWD ĐỂ
 LÚC THI TRIỂN KHAI NHANH
-
+- Settup Appsettings.json tại WPF GUI Layer
 {
   "ConnectionStrings": {
     "DefaultConnectionStringDB": "Server=DESKTOP-OLU548T;Database=Fall24PerfumeStoreDB;uid=sa;pwd=saadmin;TrustServerCertificate=True;",
@@ -32,9 +42,13 @@ Then build to confirm package
 dotnet tool install --global dotnet-ef 
 
 2) - Use Entity Framework Core to generate Object Model from DB
-dotnet ef dbcontext scaffold "Server=DESKTOP-OLU548T;Database=PerfumeStoreDB;uid=sa;pwd=saadmin;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities --context-dir ".\"
+dotnet ef dbcontext scaffold "Server=DESKTOP-OLU548T;Database=Fall24PerfumeStoreDB;uid=sa;pwd=saadmin;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities --context-dir ".\"
 
 3) - Config DbContext not hard code connection string 
+   khi chạy scaffold xong thì phần context sẽ chứa conectionString - dẫn đến hard code - ăn 0 điểm
+   Thế nên tại context thay về lấy trực tiếp connectionString thì phải thực hiện dẫn conectionString gián tiếp từ Appsetting về để 
+   tránh hard code cho hệ thống 
+
    Setup GetConnectionString func
    and OnConfiguring
 

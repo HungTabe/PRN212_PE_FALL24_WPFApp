@@ -13,16 +13,15 @@
 
 
 
-        <Label Content="LOGIN" FontWeight="Bold"  HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" FontSize="40"/>
+        <Label Content="LOGIN" FontWeight="Bold"  HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top" FontSize="55" Height="75" Width="210"/>
 
         <Label Content="Username" HorizontalAlignment="Left" Margin="199,119,0,0" 
                VerticalAlignment="Top" Height="25" Width="74" 
                Style="{StaticResource LoginLabelStyle}" />
         <Label Content="Password" HorizontalAlignment="Left" Margin="199,162,0,0" VerticalAlignment="Top" Height="24" Width="74" Style="{StaticResource LoginLabelStyle}" />
-        <Button Content="LOGIN" HorizontalAlignment="Center" Margin="0,219,0,0" VerticalAlignment="Top" Height="50" Width="210"/>
+        <Button x:Name="LoginButton" Content="LOGIN" HorizontalAlignment="Center" Margin="0,214,0,0" VerticalAlignment="Top" Height="50" Width="210" Click="LoginButton_Click"/>
         <TextBox HorizontalAlignment="Left" Margin="278,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="25"/>
         <PasswordBox HorizontalAlignment="Left" Margin="278,163,0,0" VerticalAlignment="Top" Width="232" Height="25"/>
-
 
 
     </Grid>
