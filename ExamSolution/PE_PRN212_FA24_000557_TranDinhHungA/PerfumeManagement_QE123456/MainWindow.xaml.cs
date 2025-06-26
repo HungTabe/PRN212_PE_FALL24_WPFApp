@@ -55,5 +55,15 @@ namespace PerfumeManagement_QE123456
             // Call service to fill new data
             PerfumeDataGrid.ItemsSource = _service.GetAllPerfumes();
         }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Show Login Screen
+            LoginWindow login = new();
+            login.Show();
+            // Close Main Screen
+            this.Close();
+            
+        }
     }
 }
