@@ -1,4 +1,5 @@
-﻿using PerfumeManagement.DAL.Entities;
+﻿using Microsoft.IdentityModel.Tokens;
+using PerfumeManagement.DAL.Entities;
 using PerfumeManagement.DAL.Repositories;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace PerfumeManagement.BLL.Services
         public List<PerfumeInformation> GetAllPerfumes()
         {
             return _repo.GetAll();
+        }
+
+        public List<PerfumeInformation> GetPerfumesByConditions(string ingre, string concen)
+        {
+            return _repo.GetProductsByIngredientsOrConcentration(ingre, concen);
         }
     }
 }
