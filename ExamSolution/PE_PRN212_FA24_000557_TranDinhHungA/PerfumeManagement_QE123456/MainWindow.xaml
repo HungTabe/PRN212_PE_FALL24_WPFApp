@@ -5,24 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PerfumeManagement_QE123456"
         mc:Ignorable="d"
-        Title="Fall 2024 - Main PE Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13" Background="#FFDDE769" WindowStartupLocation="CenterScreen" >
+        Title="Fall 2024 - Main PE Management" Height="500" Width="800" FontFamily="Tahoma" FontSize="13" Background="#FFDDE769" WindowStartupLocation="CenterScreen" 
+        Loaded="Window_Loaded" >
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Width="600" Height="300" Margin="10,104,0,0"
-                  VerticalAlignment="Top" AutoGenerateColumns="False">
+
+        <Label x:Name="WelcomeLabel" Content="WELCOME, " Width="Auto" Style="{StaticResource MainLabelStyle}" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
+
+
+        <DataGrid HorizontalAlignment="Left" Width="650" Height="320" Margin="10,139,0,0"
+                  VerticalAlignment="Top" AutoGenerateColumns="False"
+                  x:Name="PerfumeDataGrid"
+                  >
             <!--AutoGenerateColumns="False" for 9+-->
             <!--Config Columns + Open Tag Parent-->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding PerfumeId}"/>
-                <DataGridTextColumn Header="Name" Width="60" Binding="{Binding PerfumeName}"/>
-                <DataGridTextColumn Header="Ingredient" Width="120" Binding="{Binding Ingredients}"/>
+                <DataGridTextColumn Header="Name" Width="50" Binding="{Binding PerfumeName}"/>
+                <DataGridTextColumn Header="Ingredient" Width="70" Binding="{Binding Ingredients}"/>
                 <DataGridTextColumn Header="Release Date" Width="90" Binding="{Binding ReleaseDate }"/>
-                <DataGridTextColumn Header="Concentration" Width="120" Binding="{Binding Concentration}"/>
-                <DataGridTextColumn Header="Longevity " Width="80" Binding="{Binding Longevity}"/>
-                <DataGridTextColumn Header="Quantity " Width="80" Binding="{Binding Quantity}"/>
-                <DataGridTextColumn Header="Price" Width="80" Binding="{Binding Price }"/>
+                <DataGridTextColumn Header="Concentration" Width="90" Binding="{Binding Concentration}"/>
+                <DataGridTextColumn Header="Longevity " Width="70" Binding="{Binding Longevity}"/>
+                <DataGridTextColumn Header="Quantity " Width="60" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Price" Width="40" Binding="{Binding Price }"/>
+                <DataGridTextColumn Header="ProductionCompanyID" Width="140" Binding="{Binding ProductionCompanyId }"/>
+                <DataGridTextColumn Header="ProductionCompany" Width="150" Binding="{Binding ProductionCompany.ProductionCompanyName }"/>
 
             </DataGrid.Columns>
         </DataGrid>
+        <Rectangle HorizontalAlignment="Center" Fill="AliceBlue" Height="75" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="780"/>
+        <Button x:Name="CreateButton" Content="Create Product" Background="AliceBlue" HorizontalAlignment="Left" Margin="678,139,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
+        <Button x:Name="UpdateButton" Content="Update Product" Background="AliceBlue"  HorizontalAlignment="Left" Margin="678,229,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
+        <Button x:Name="DeleteButton" Content="Delete Product"  Background="AliceBlue" HorizontalAlignment="Left" Margin="678,319,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Background="AliceBlue" Margin="678,404,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
+        <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left"  Margin="25,55,0,0" VerticalAlignment="Top" Height="44" Width="205" />
+        <Label Content="Ingredients" Style="{StaticResource MainLabelStyle}" HorizontalAlignment="Left" Margin="245,61,0,0" VerticalAlignment="Top" Height="34" Width="105"/>
+        <Label Content="Concentration" Style="{StaticResource MainLabelStyle}" HorizontalAlignment="Left" Margin="505,61,0,0" VerticalAlignment="Top" Height="34" Width="105"/>
+        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}" Margin="330,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="40"/>
+        <TextBox HorizontalAlignment="Left"  Style="{StaticResource MainTextboxStyle}" Margin="610,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="40"/>
+
+
 
     </Grid>
 </Window>

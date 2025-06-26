@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using PerfumeManagement.BLL.Services;
+using PerfumeManagement.DAL.Entities;
+using PerfumeManagement.DAL.Repositories;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +19,41 @@ namespace PerfumeManagement_QE123456
     /// </summary>
     public partial class MainWindow : Window
     {
+        private PerfumeInforService _service = new();
+        public Psaccount Account { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Fill DataTable
+            FillDataTable();
+            // Authen User Role
+            WelcomeLabel.Content = "WELCOME, " + Account.PsaccountNote;
+            if (Account.Role != 2)
+            {
+                DisbaledButton();
+            }
+        }
+
+        private void DisbaledButton()
+        {
+            SearchButton.IsEnabled = false;
+            CreateButton.IsEnabled = false;
+            UpdateButton.IsEnabled = false;
+            DeleteButton.IsEnabled = false;
+        }
+
+
+        private void FillDataTable()
+        {
+            // Delete previous data
+            PerfumeDataGrid.ItemsSource = null;
+            // Call service to fill new data
+            PerfumeDataGrid.ItemsSource = _service.GetAllPerfumes();
         }
     }
 }
