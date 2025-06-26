@@ -1,4 +1,5 @@
-﻿using PerfumeManagement.BLL.Services;
+﻿using Microsoft.IdentityModel.Tokens;
+using PerfumeManagement.BLL.Services;
 using PerfumeManagement.DAL.Entities;
 using PerfumeManagement.DAL.Repositories;
 using System.Text;
@@ -64,6 +65,30 @@ namespace PerfumeManagement_QE123456
             // Close Main Screen
             this.Close();
             
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string ingredients = IngredientsTextBox.Text.IsNullOrEmpty() ? "empty" : IngredientsTextBox.Text;
+            string concentration = ConcentrationTextBox.Text.IsNullOrEmpty() ? "empty" : ConcentrationTextBox.Text ;
+
+            var list = _service.GetPerfumesByConditions(ingredients, concentration);
+
+            if (!list.IsNullOrEmpty())
+            {
+                // Delete previous data
+                PerfumeDataGrid.ItemsSource = null;
+                PerfumeDataGrid.ItemsSource = list;
+            }
+            else
+            {
+                MessageBox.Show($"Not found any product with ingredients: {ingredients} and concentration: {concentration}");
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
