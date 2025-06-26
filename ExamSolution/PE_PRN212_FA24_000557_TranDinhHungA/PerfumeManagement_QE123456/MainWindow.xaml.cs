@@ -90,5 +90,24 @@ namespace PerfumeManagement_QE123456
         {
 
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var perfume = PerfumeDataGrid.SelectedItem as PerfumeInformation;
+            if (perfume == null)
+            {
+                MessageBox.Show("Please select item!", "Warning", MessageBoxButton.OK);
+                return;
+            }
+            var result = MessageBox.Show("Do you want to delete this perfume?", "Confirm deletion", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                bool checkDelete = _service.DeletePerfume(perfume);
+                if (checkDelete)
+                {
+                    FillDataTable();
+                }
+            }
+        }
     }
 }

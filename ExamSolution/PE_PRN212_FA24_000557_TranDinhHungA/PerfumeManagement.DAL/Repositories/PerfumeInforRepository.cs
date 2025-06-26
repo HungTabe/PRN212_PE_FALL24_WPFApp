@@ -20,6 +20,13 @@ namespace PerfumeManagement.DAL.Repositories
             return _context.PerfumeInformations.Include("ProductionCompany").ToList();
         }
 
+        public void Delete(PerfumeInformation perfume)
+        {
+            _context = new();
+            _context.PerfumeInformations.Remove(perfume);
+            _context.SaveChanges();
+        }
+
         public List<PerfumeInformation> GetProductsByIngredientsOrConcentration(string ingredients, string concentration)
         {
             _context = new();

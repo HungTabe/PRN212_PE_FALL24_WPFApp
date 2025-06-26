@@ -23,5 +23,11 @@ namespace PerfumeManagement.BLL.Services
         {
             return _repo.GetProductsByIngredientsOrConcentration(ingre, concen);
         }
+
+        public bool DeletePerfume(PerfumeInformation perfumeInformation)
+        {
+            _repo.Delete(perfumeInformation);
+            return true;
+        }
     }
 }
