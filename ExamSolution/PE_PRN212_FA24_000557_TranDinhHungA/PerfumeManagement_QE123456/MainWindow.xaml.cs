@@ -109,5 +109,37 @@ namespace PerfumeManagement_QE123456
                 }
             }
         }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Because DetailWindow() have InitializeComponent(); so when write this
+            // is will initialize window detail
+            var detailWindow = new DetailWindow();
+            // MainWindow At BackGround still check If 
+            if (detailWindow.ShowDialog() == true && detailWindow.IsSaved)
+            {
+                // Reload data for MainWindow
+                FillDataTable();
+            }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Check objet select if not Inform user please select to update
+            if (PerfumeDataGrid.SelectedItem is PerfumeInformation selectedPerfume)
+            {
+                // Run detailWindow constructor
+                var detailWindow = new DetailWindow(selectedPerfume);
+                // MainWindow At BackGround still check If 
+                if (detailWindow.ShowDialog() == true && detailWindow.IsSaved)
+                {
+                    FillDataTable();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a perfume to update.");
+            }
+        }
     }
 }

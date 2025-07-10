@@ -53,5 +53,30 @@ namespace PerfumeManagement.DAL.Repositories
 
             return _context.PerfumeInformations.Where(p => p.Ingredients.ToLower().Contains(ingredients.ToLower()) || p.Concentration.ToLower().Contains(concentration.ToLower())).Include(p => p.ProductionCompany).ToList();
         }
+
+        public void AddPerfume(PerfumeInformation perfume)
+        {
+            _context = new();
+            _context.PerfumeInformations.Add(perfume);
+            _context.SaveChanges();
+        }
+
+        public void UpdatePerfume(PerfumeInformation perfume)
+        {
+            _context = new();
+            var existing = _context.PerfumeInformations.FirstOrDefault(p => p.PerfumeId == perfume.PerfumeId);
+            if (existing != null)
+            {
+                existing.PerfumeName = perfume.PerfumeName;
+                existing.Ingredients = perfume.Ingredients;
+                existing.ReleaseDate = perfume.ReleaseDate;
+                existing.Concentration = perfume.Concentration;
+                existing.Longevity = perfume.Longevity;
+                existing.Quantity = perfume.Quantity;
+                existing.Price = perfume.Price;
+                existing.ProductionCompanyId = perfume.ProductionCompanyId;
+                _context.SaveChanges();
+            }
+        }
     }
 }

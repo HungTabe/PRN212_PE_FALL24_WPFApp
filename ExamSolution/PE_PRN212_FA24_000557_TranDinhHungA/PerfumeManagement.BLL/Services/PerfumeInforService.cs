@@ -11,7 +11,6 @@ namespace PerfumeManagement.BLL.Services
 {
     public class PerfumeInforService
     {
-        // Because not setup context at construction so we can do this 
         private PerfumeInforRepository _repo = new();
 
         public List<PerfumeInformation> GetAllPerfumes()
@@ -28,6 +27,16 @@ namespace PerfumeManagement.BLL.Services
         {
             _repo.Delete(perfumeInformation);
             return true;
+        }
+
+        public void AddPerfume(PerfumeInformation perfume)
+        {
+            _repo.AddPerfume(perfume);
+        }
+
+        public void UpdatePerfume(PerfumeInformation perfume)
+        {
+            _repo.UpdatePerfume(perfume);
         }
     }
 }

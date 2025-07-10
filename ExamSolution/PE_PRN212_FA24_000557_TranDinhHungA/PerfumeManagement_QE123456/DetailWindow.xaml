@@ -5,27 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PerfumeManagement_QE123456"
         mc:Ignorable="d"
-        Title="Perfume Detail Window" Height="400" Width="700"
+        Title="Perfume Detail Window" Height="435" Width="725"
         Background="#FFDDE679" WindowStartupLocation="CenterScreen"
         FontFamily="Tahoma" FontSize="13">
     <Grid>
-        <Label Content="CREATE | UPDATE PERFUME" FontSize="22px" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="39" Width="330"/>
-        <Rectangle HorizontalAlignment="Center" Fill="AliceBlue" Height="320" Margin="0,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="680"/>
+        <Label Content="CREATE | UPDATE PERFUME" FontSize="22px" FontWeight="Bold" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" Height="39" Width="330"/>
+        <Rectangle HorizontalAlignment="Center" Fill="AliceBlue" Height="345" Margin="0,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="676"/>
         <Label Content="Perfume ID" Style="{StaticResource MainLabelStyle}" HorizontalAlignment="Left" Margin="25,68,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <TextBox x:Name="PerfumeIdTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}" Margin="210,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="26"/>
+
         <Label Content="Perfume Name" Style="{StaticResource MainLabelStyle}"  HorizontalAlignment="Left" Margin="25,99,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <TextBox x:Name="PerfumeNameTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="26"/>
+
         <Label Content="Ingredients" Style="{StaticResource MainLabelStyle}"  HorizontalAlignment="Left" Margin="25,130,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <TextBox x:Name="IngredientsTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="26"/>
+
         <Label Content="Release Date" Style="{StaticResource MainLabelStyle}"  HorizontalAlignment="Left" Margin="25,161,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <DatePicker x:Name="ReleaseDatePicker" HorizontalAlignment="Left" Margin="210,161,0,0" VerticalAlignment="Top" Width="200" Height="26"/>
+
         <Label Content="Concentration" Style="{StaticResource MainLabelStyle}"  HorizontalAlignment="Left" Margin="25,192,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
-        <Label Content="Longevity" Style="{StaticResource MainLabelStyle}" Margin="25,249,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
-        <Label Content="Production Company ID" Style="{StaticResource MainLabelStyle}" Margin="25,293,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}" Margin="210,68,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="66"/>
-        <TextBox HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Height="26"/>
+        <TextBox x:Name="ConcentrationTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="26"/>
 
+        <Label Content="Longevity" Style="{StaticResource MainLabelStyle}" Margin="25,223,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <TextBox x:Name="LongevityTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="26"/>
 
+        <Label Content="Quantity" Style="{StaticResource MainLabelStyle}" Margin="25,254,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="26"/>
+
+        <Label Content="Price" Style="{StaticResource MainLabelStyle}" Margin="25,285,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Style="{StaticResource MainTextboxStyle}"  Margin="210,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="26"/>
+
+        <Label Content="Production Company" Style="{StaticResource MainLabelStyle}" Margin="25,316,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <ComboBox x:Name="ProductionCompanyComboBox" HorizontalAlignment="Left" Margin="210,316,0,0" VerticalAlignment="Top" Width="300" Height="26"/>
+
+        <Button x:Name="SaveButton" Content="Save" Width="100" Height="32" HorizontalAlignment="Left" Margin="210,355,0,0" VerticalAlignment="Top" Click="SaveButton_Click"/>
+        <Button x:Name="CancelButton" Content="Cancel" Width="100" Height="32" HorizontalAlignment="Left" Margin="330,355,0,0" VerticalAlignment="Top" Click="CancelButton_Click"/>
     </Grid>
 </Window>

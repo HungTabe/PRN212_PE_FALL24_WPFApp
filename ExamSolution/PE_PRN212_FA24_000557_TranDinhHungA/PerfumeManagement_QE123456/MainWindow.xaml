@@ -33,8 +33,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Rectangle HorizontalAlignment="Center" Fill="AliceBlue" Height="75" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="780"/>
-        <Button x:Name="CreateButton" Content="Create Product" Background="AliceBlue" HorizontalAlignment="Left" Margin="678,139,0,0" VerticalAlignment="Top" Height="50" Width="92"/>
-        <Button x:Name="UpdateButton" Content="Update Product" Background="AliceBlue"  HorizontalAlignment="Left" Margin="678,229,0,0" VerticalAlignment="Top" Height="50" Width="92"/>
+        <Button x:Name="CreateButton" Content="Create Product" Background="AliceBlue" HorizontalAlignment="Left" Margin="678,139,0,0" VerticalAlignment="Top" Height="55" Width="92" Click="CreateButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update Product" Background="AliceBlue"  HorizontalAlignment="Left" Margin="678,229,0,0" VerticalAlignment="Top" Height="55" Width="92" Click="UpdateButton_Click"/>
         <Button x:Name="DeleteButton" Content="Delete Product"  Background="AliceBlue" HorizontalAlignment="Left" Margin="678,319,0,0" VerticalAlignment="Top" Height="55" Width="92" Click="DeleteButton_Click"/>
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Background="AliceBlue" Margin="678,404,0,0" VerticalAlignment="Top" Height="55" Width="92" Click="QuitButton_Click"/>
         <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left"  Margin="25,55,0,0" VerticalAlignment="Top" Height="44" Width="205" Click="SearchButton_Click" />
