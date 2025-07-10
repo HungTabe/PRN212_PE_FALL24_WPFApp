@@ -25,5 +25,17 @@ namespace PerfumeManagement.BLL.Services
             // Call to function search on DB through repo
             return _repo.GetProductBySearchTerms(ingredient, concentration);
         }
+
+        // Function Add new
+        public void AddPerfume(PerfumeInformation newPerfume)
+        {
+            _repo.AddPerfume(newPerfume);
+        }
+
+        // Function Update
+        public void UpdatePerfume(PerfumeInformation updatePerfume)
+        {
+            _repo.UpdatePerfume(updatePerfume);
+        }
     }
 }

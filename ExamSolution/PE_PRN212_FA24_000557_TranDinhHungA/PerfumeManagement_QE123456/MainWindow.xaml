@@ -32,16 +32,16 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Rectangle HorizontalAlignment="Center" Fill="AliceBlue" Height="75" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="780"/>
-        <Button x:Name="CreateButton" Content="Create Product" Background="AliceBlue" HorizontalAlignment="Left" Margin="678,139,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
-        <Button x:Name="UpdateButton" Content="Update Product" Background="AliceBlue"  HorizontalAlignment="Left" Margin="678,229,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
-        <Button x:Name="DeleteButton" Content="Delete Product"  Background="AliceBlue" HorizontalAlignment="Left" Margin="678,319,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Background="AliceBlue" Margin="678,404,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
+        <Rectangle HorizontalAlignment="Center" Fill="AliceBlue" Height="75" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="740"/>
+        <Button x:Name="CreateButton" Content="Create Product" Background="AliceBlue" HorizontalAlignment="Left" Margin="678,139,0,0" VerticalAlignment="Top" Height="55" Width="92" Click="CreateButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update Product" Background="AliceBlue"  HorizontalAlignment="Left" Margin="678,229,0,0" VerticalAlignment="Top" Height="55" Width="92" Click="UpdateButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete Product"  Background="AliceBlue" HorizontalAlignment="Left" Margin="678,319,0,0" VerticalAlignment="Top" Height="55" Width="92"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Background="AliceBlue" Margin="678,404,0,0" VerticalAlignment="Top" Height="55" Width="92"/>
         <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left"  Margin="25,55,0,0" VerticalAlignment="Top" Height="44" Width="205" Click="SearchButton_Click" />
         <Label Content="Ingredients" Style="{StaticResource MainLabelStyle}" HorizontalAlignment="Left" Margin="245,61,0,0" VerticalAlignment="Top" Height="34" Width="105"/>
         <Label Content="Concentration" Style="{StaticResource MainLabelStyle}" HorizontalAlignment="Left" Margin="505,61,0,0" VerticalAlignment="Top" Height="34" Width="105"/>
         <TextBox HorizontalAlignment="Left" x:Name="IngredientsTxt" Style="{StaticResource MainTextboxStyle}" Margin="330,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="40"/>
-        <TextBox HorizontalAlignment="Left" x:Name="ConcentrationTxt" Style="{StaticResource MainTextboxStyle}" Margin="610,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="40"/>
+        <TextBox HorizontalAlignment="Left" x:Name="ConcentrationTxt" Style="{StaticResource MainTextboxStyle}" Margin="610,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="40"/>
 
 
 

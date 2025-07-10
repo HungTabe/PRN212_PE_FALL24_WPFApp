@@ -94,5 +94,33 @@ namespace PerfumeManagement_QE123456
             }
 
         }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Show Detail Window
+            var detailWindow = new DetailWindow();
+            // Login : If Detail Window save successfully - DetailWindow will inform MainWindow reaload data grid to show newest data
+            //         If save false - DetailWindow will inform MainWindow not to readload data
+            if  ( detailWindow.ShowDialog() == true && detailWindow.IsSaved)
+            {
+                FillDataTable();
+            }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Check user need to selected item first if not show warning
+            if (PerfumeDataGrid.SelectedItem is PerfumeInformation selectedPerfume)
+            {
+                var detailWindow = new DetailWindow(selectedPerfume);
+                if (detailWindow.ShowDialog() == true && detailWindow.IsSaved)
+                {
+                    FillDataTable(); 
+                }
+            } else
+            {
+                MessageBox.Show("Please select a perfume to update");
+            }
+        }
     }
 }

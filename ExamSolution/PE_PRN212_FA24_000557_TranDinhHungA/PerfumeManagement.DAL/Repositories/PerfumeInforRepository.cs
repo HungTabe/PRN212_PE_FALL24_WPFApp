@@ -60,5 +60,35 @@ namespace PerfumeManagement.DAL.Repositories
             // Case 4 : both null them GUI will show MessageBox need to fill search terms
             return null;
         }
+
+        public void AddPerfume(PerfumeInformation perfume)
+        {
+            _context = new();
+
+        
+            
+
+            _context.PerfumeInformations.Add(perfume);
+            _context.SaveChanges();
+        }
+
+        public void UpdatePerfume(PerfumeInformation perfume)
+        {
+            _context = new();
+            // Check exist in db
+            var existing = _context.PerfumeInformations.FirstOrDefault(p => p.PerfumeId == perfume.PerfumeId);
+            if (existing != null)
+            {
+                existing.PerfumeName = perfume.PerfumeName;
+                existing.Ingredients = perfume.Ingredients;
+                existing.ReleaseDate = perfume.ReleaseDate;
+                existing.Concentration = perfume.Concentration;
+                existing.Longevity = perfume.Longevity;
+                existing.Quantity = perfume.Quantity;
+                existing.Price = perfume.Price;
+                existing.ProductionCompanyId = perfume.ProductionCompanyId;
+                _context.SaveChanges();
+            }
+        }
     }
 }
